@@ -1,0 +1,21 @@
+<nav>
+  <div>
+    <% if request.fullpath == '/categories/new' || request.fullpath == '/categories/2/management' %>
+      <%= link_to '<', '/categories' %>
+    <% elsif request.fullpath == '/categories/2/management/new' %>
+      <%= link_to '<', 'categories/2/management' %>
+    <% end %>
+  </div>
+  <div>
+    <% case request.fullpath %>
+    <% when '/categories' %>
+      <p>Categories</p>
+    <% when '/categories/new' %>
+      <p>New Category</p>
+    <% when '/categories/2/management' %>
+      <p>Wasted Money</p>
+    <% else %>
+      <p>New Purchase</p>
+    <% end %>
+  </div>
+</nav>
