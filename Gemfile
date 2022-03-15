@@ -15,7 +15,7 @@ gem 'pg', '~> 1.1'
 # Use rubocop to mantain a clean code
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-# Use devise to authorize the users
+# Use devise to authenticate users
 gem 'devise'
 
 # Use the Puma web server [https://github.com/puma/puma]
