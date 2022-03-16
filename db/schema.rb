@@ -33,12 +33,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_15_015305) do
   end
 
   create_table "managments", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.string "name"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_managments_on_user_id"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_managments_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,5 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_15_015305) do
   add_foreign_key "group_managments", "groups"
   add_foreign_key "group_managments", "managments"
   add_foreign_key "groups", "users"
-  add_foreign_key "managments", "users"
+  add_foreign_key "managments", "users", column: "author_id"
 end
