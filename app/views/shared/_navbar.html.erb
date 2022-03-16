@@ -1,9 +1,9 @@
 <nav>
   <div>
-    <% if request.fullpath == '/categories/new' || request.fullpath == '/categories/2/management' %>
+    <% if request.fullpath == '/categories/new' || request.fullpath == "/categories/#{params[:cat_id]}/management" %>
       <%= link_to '<', '/categories' %>
-    <% elsif request.fullpath == '/categories/2/management/new' %>
-      <%= link_to '<', 'categories/2/management' %>
+    <% elsif request.fullpath == "/categories/#{params[:cat_id]}/management/new" %>
+      <%= link_to '<', "categories/#{params[:cat_id]}/management" %>
     <% end %>
   </div>
   <div>
@@ -12,7 +12,7 @@
       <p>Categories</p>
     <% when '/categories/new' %>
       <p>New Category</p>
-    <% when '/categories/2/management' %>
+    <% when "/categories/#{params[:cat_id]}/management" %>
       <p>Wasted Money</p>
     <% else %>
       <p>New Purchase</p>
