@@ -1,1 +1,20 @@
 <%= render 'partials/navbar' %>
+<%= render 'partials/flash' %>
+<%= form_with(model: @management, url: "/categories/#{params[:cat_id]}/management/create", scope: :data) do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Purchase's name" %> <br>
+    <%= f.number_field :amount, placeholder: "Purchase's amount"%> <br>
+  </div>
+  <div>
+    <p>Purchase will save in <strong><%= @category.name %></strong> category, if you want to save it in others as well, select them:</p>
+    <p>To add purchase to others categories select them:</p>
+    <% @categories.each do |cat| %>
+        <% unless cat.id == @category.id %>
+          <%= cat.name %>
+          <%= f.check_box :categories, { multiple: true }, cat.id, false %> <br>
+        <% end %>  
+    <% end %>
+
+  </div>
+    <%= f.submit 'Save Purchase' %>
+<% end %>
