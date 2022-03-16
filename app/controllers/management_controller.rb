@@ -1,7 +1,7 @@
 class ManagementController < ApplicationController
-  def index; end
-
-  def show; end
+  def index
+    @category = current_user.groups.find(params[:cat_id])
+  end
 
   def new; end
 end
