@@ -1,4 +1,5 @@
-<%= render 'shared/navbar' %>
+<%= render 'partials/navbar' %>
+<%= render 'partials/flash' %>
 <%= form_with(model: @category, url: '/categories/create', scope: :data) do |f| %>
   <div>
     <%= f.text_field :name, placeholder: "Category's name" %> <br>

@@ -17,11 +17,11 @@ class CategoriesController < ApplicationController
   def create
     @group = Group.new(user_id: current_user.id, name: category_params[:name], icon: category_params[:icon])
     if @group.save
-      flash[:success] = 'New category created successfully! =D'
+      flash[:notice] = 'New category created successfully! =D'
       redirect_to '/categories'
     else
-      flash[:error] = @group.errors.full_messages
-      render :new
+      flash[:alert] = @group.errors.full_messages
+      redirect_to '/categories/new'
     end
   end
 

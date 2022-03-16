@@ -1,8 +1,8 @@
-<%= render 'shared/navbar' %>
-<%= render 'shared/flash' %>
+<%= render 'partials/navbar' %>
+<%= render 'partials/flash' %>
 <% if @empty_categories %>
   <h2>Add a new category</h2>
 <% else %>
-  <%= render 'shared/category_cards', categories: @categories %>
+  <%= render 'partials/category_cards', categories: @categories %>
 <% end %>
 <%= link_to 'Add Category', '/categories/new' %>
