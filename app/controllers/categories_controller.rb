@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
               ['Gas', 'gasoline.png'], ['Technology', 'laptop.png'],
               ['Restaurant', 'restaurant.png'], ['Running', 'running.png'],
               ['Education', 'school.png'], ['Grocery', 'shopping_cart.png'],
-              ['E-games', 'video_games.png']]
+              ['E-games', 'video_games.png'], ['Other', 'happy.png']]
   end
 
   def create

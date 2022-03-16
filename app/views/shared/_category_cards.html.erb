@@ -1,11 +1,13 @@
 <ul>
   <% @categories.each do |category| %>
-    <li>
-      <div class="d-flex">
-        <%= image_tag("#{category.icon}", alt: "#{category.name} icon") %>
-        <p><%= category.name %></p>
-        <p>$100</p>
-      </div>
-    </li>
+    <%= link_to "/categories/#{category.id}/management" do %>
+      <li>
+        <div class="d-flex">
+          <%= image_tag("#{category.icon}", alt: "#{category.name} icon") %>
+          <p><%= category.name %></p>
+          <p>$100</p>
+        </div>
+      </li>
+      <% end %>
   <% end %>
 </ul>
