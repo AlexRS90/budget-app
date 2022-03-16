@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: rosybrown;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+}

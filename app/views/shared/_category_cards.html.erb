@@ -1,8 +1,8 @@
 <ul>
   <% @categories.each do |category| %>
     <li>
-      <div>
-        <img src="#{category.icon}" alt ="Category image">
+      <div class="d-flex">
+        <%= image_tag("#{category.icon}", alt: "#{category.name} icon") %>
         <p><%= category.name %></p>
         <p>$100</p>
       </div>

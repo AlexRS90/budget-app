@@ -1,1 +1,9 @@
 <%= render 'shared/navbar' %>
+<%= form_with(model: @category, url: '/categories/create', scope: :data) do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Category's name" %> <br>
+    <%= f.label :icon, 'Category Icon'%>
+    <%= f.select :icon, @icons.map { |icon| [icon[0], icon[1]] } %> <br>
+    <%= f.submit 'Save Categoty' %>
+  </div>
+<% end %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   get 'categories', to: 'categories#index'
   get 'categories/new'
+  post 'categories/create', to: 'categories#create'
   get '/categories/:cat_id/management', to: 'management#index'
   get '/categories/:cat_id/management/new', to: 'management#new'
   
