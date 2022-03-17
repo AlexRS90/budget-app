@@ -1,1 +1,4 @@
 <%= render 'partials/navbar' %>
+<%= render 'partials/flash' %>
+<%= render 'partials/management_details', category: @category, purchase: @purchase %>
+<%= link_to 'Purchase', "/categories/#{@category.id}/management/new" %>

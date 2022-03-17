@@ -1,0 +1,15 @@
+<% total = 0 %>
+<% @purchase.each { |num| total += num[:amount] } %>
+<ul>
+  <li class="d-flex">
+    <%= image_tag("#{@category.icon}", alt: "#{@category.name} icon") %>
+    <p><%= @category.name %></p>
+    <p>Total waste: $<%= total %></p>
+  </li>
+  <% @purchase.each do |good| %>
+    <li class="d-flex">
+      <p><%= good[:name] %></p>
+      <p>$<%= good[:amount] %></p>
+    </li>
+  <% end %>
+</ul>
