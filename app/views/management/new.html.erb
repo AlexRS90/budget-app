@@ -7,7 +7,6 @@
   </div>
   <div>
     <p>Purchase will save in <strong><%= @category.name %></strong> category, if you want to save it in others as well, select them:</p>
-    <p>To add purchase to others categories select them:</p>
     <% @categories.each do |cat| %>
         <% unless cat.id == @category.id %>
           <%= cat.name %>

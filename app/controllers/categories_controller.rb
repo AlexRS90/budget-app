@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @empty_categories = current_user.groups.all.empty?
+    @empty_categories = current_user.groups.empty?
     @categories = current_user.groups.all if @empty_categories == false
   end
 

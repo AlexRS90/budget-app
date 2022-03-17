@@ -1,11 +1,15 @@
 <ul>
   <% @categories.each do |category| %>
+    <% total = 0 %>
+    <% category.managments.each do |managment| %>
+      <% total += managment.amount %>
+    <% end %>
     <%= link_to "/categories/#{category.id}/management" do %>
       <li>
         <div class="d-flex">
           <%= image_tag("#{category.icon}", alt: "#{category.name} icon") %>
           <p><%= category.name %></p>
-          <p>$100</p>
+          <p>$<%= total %></p>
         </div>
       </li>
       <% end %>
