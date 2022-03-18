@@ -5,4 +5,6 @@
 <% else %>
   <%= render 'partials/category_cards', categories: @categories %>
 <% end %>
-<%= link_to 'Add Category', '/categories/new' %>
+<div class="bg-btn-green d-flex">
+  <%= link_to 'Add Category', '/categories/new', class:'btn-green' %>
+</div>  

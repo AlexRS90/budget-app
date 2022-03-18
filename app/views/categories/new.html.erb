@@ -1,10 +1,11 @@
 <%= render 'partials/navbar' %>
 <%= render 'partials/flash' %>
 <%= form_with(model: @category, url: '/categories/create', scope: :data) do |f| %>
-  <div>
-    <%= f.text_field :name, placeholder: "Category's name" %> <br>
-    <%= f.label :icon, 'Category Icon'%>
-    <%= f.select :icon, @icons.map { |icon| [icon[0], icon[1]] } %> <br>
-    <%= f.submit 'Save Categoty' %>
+  <div class="d-flex flex-column field">
+    <br>
+    <%= f.text_field :name, placeholder: "Category's name", class: 'text-field' %> <br>
+    <%= f.label :icon, 'Category Icon:', class: 'icon-label' %>
+    <%= f.select :icon, @icons.map { |icon| [icon[0], icon[1]] }, {}, { class: 'select-list' } %> <br>
+    <%= f.submit 'Save Category', class: 'btn btn-primary save' %>
   </div>
 <% end %>

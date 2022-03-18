@@ -1,4 +1,6 @@
 <%= render 'partials/navbar' %>
 <%= render 'partials/flash' %>
 <%= render 'partials/management_details', category: @category, purchase: @purchase %>
-<%= link_to 'Purchase', "/categories/#{@category.id}/management/new" %>
+<div class="bg-btn-green d-flex">
+  <%= link_to 'Purchase', "/categories/#{@category.id}/management/new", class:'btn-green' %>
+</div>

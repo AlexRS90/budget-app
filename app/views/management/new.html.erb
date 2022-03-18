@@ -1,19 +1,23 @@
 <%= render 'partials/navbar' %>
 <%= render 'partials/flash' %>
 <%= form_with(model: @management, url: "/categories/#{params[:cat_id]}/management/create", scope: :data) do |f| %>
-  <div>
-    <%= f.text_field :name, placeholder: "Purchase's name" %> <br>
-    <%= f.number_field :amount, placeholder: "Purchase's amount"%> <br>
-  </div>
-  <div>
-    <p>Purchase will save in <strong><%= @category.name %></strong> category, if you want to save it in others as well, select them:</p>
-    <% @categories.each do |cat| %>
-        <% unless cat.id == @category.id %>
-          <%= cat.name %>
-          <%= f.check_box :categories, { multiple: true }, cat.id, false %> <br>
-        <% end %>  
+  <div class="d-flex flex-column field">
+    <br>
+    <%= f.text_field :name, placeholder: "Purchase's name", class: 'text-field' %> <br>
+    <%= f.number_field :amount, placeholder: "Purchase's amount", class: 'text-field' %>
+    <% if @categories.length > 1 %>
+      <p class="add-class-text">Purchase will be save it in <strong><%= @category.name %></strong> category, if you want to save it in others as well, select them:</p>
     <% end %>
-
+    <ul class="check-list-wrapper">
+      <% @categories.each do |cat| %>
+          <% unless cat.id == @category.id %>
+            <li class="d-flex check-list">
+              <p class="check-box-label"><%= cat.name %></p>
+              <%= f.check_box :categories, { multiple: true }, cat.id, false %>
+            </li>
+          <% end %>  
+      <% end %>
+    </ul>
+    <%= f.submit 'Save Purchase', class: 'btn btn-primary save' %> <br>
   </div>
-    <%= f.submit 'Save Purchase' %>
 <% end %>
