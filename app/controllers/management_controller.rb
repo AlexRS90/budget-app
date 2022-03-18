@@ -2,7 +2,7 @@ class ManagementController < ApplicationController
   def index
     @category = current_user.groups.find(params[:cat_id])
     @purchase = []
-    @group_managment = GroupManagment.where(group_id: @category.id)
+    @group_managment = GroupManagment.where(group_id: @category.id).order(id: :desc)
     @group_managment.each do |manage|
       @purchase.push({ name: Managment.find(manage.managment_id).name,
                        amount: Managment.find(manage.managment_id).amount })
