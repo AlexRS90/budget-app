@@ -220,3 +220,16 @@ html, body {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+.success-message {
+  margin-left: 2rem;
+  color: #42ba96;
+}
+
+.error-list {
+  list-style: none;
+}
+
+.error-message {
+  color: #faa0a0;
+}
