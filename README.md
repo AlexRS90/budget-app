@@ -15,7 +15,7 @@
 ✅ Setup PostgreSQL database. <br>
 ✅ The app has the following interfaces:
 
- - A spash page.
+ - A splash page.
  - A log in page
  - A registration page.
  - A category page as home page
