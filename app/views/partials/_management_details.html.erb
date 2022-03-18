@@ -6,7 +6,7 @@
       <%= image_tag("#{@category.icon}", alt: "#{@category.name} icon") %>
     </div>
     <p class="detail-name"><strong><%= @category.name %></strong></p>
-    <p class="cat-amount">Total waste: $<%= total %></p>
+    <p class="cat-amount">Total spent: $<%= total %></p>
   </li>
   <% @purchase.each do |good| %>
     <li class="d-flex border-details f-justify-between details-cards">
