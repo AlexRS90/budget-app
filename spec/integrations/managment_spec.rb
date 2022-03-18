@@ -10,7 +10,7 @@ RSpec.describe 'New Category', type: :feature do
 
   scenario 'Check correct navbar title' do
     visit '/categories/1/management'
-    expect(page).to have_content 'Wasted Money'
+    expect(page).to have_content 'Spent Money'
   end
 
   scenario 'Check if Purchase button exists' do
