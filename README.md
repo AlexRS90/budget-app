@@ -5,6 +5,9 @@
 
 > Mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
+![Home page](/screenshots/categories.png)
+![Transaction page](/screenshots/details.png)
+
 ## Roadmap:
 
 ✅ Created a new rails app. <br>
