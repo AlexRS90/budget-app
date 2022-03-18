@@ -1,13 +1,15 @@
 <% total = 0 %>
 <% @purchase.each { |num| total += num[:amount] } %>
-<ul>
-  <li class="d-flex">
-    <%= image_tag("#{@category.icon}", alt: "#{@category.name} icon") %>
-    <p><%= @category.name %></p>
-    <p>Total waste: $<%= total %></p>
+<ul class="details-wrapper d-flex flex-column">
+  <li class="d-flex details-category border-details">
+    <div class="icon">
+      <%= image_tag("#{@category.icon}", alt: "#{@category.name} icon") %>
+    </div>
+    <p class="detail-name"><strong><%= @category.name %></strong></p>
+    <p class="cat-amount">Total waste: $<%= total %></p>
   </li>
   <% @purchase.each do |good| %>
-    <li class="d-flex">
+    <li class="d-flex border-details f-justify-between details-cards">
       <p><%= good[:name] %></p>
       <p>$<%= good[:amount] %></p>
     </li>

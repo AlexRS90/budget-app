@@ -1,15 +1,17 @@
-<ul>
+<ul class="d-flex flex-column category-wrapper">
   <% @categories.each do |category| %>
     <% total = 0 %>
     <% category.managments.each do |managment| %>
       <% total += managment.amount %>
     <% end %>
-    <%= link_to "/categories/#{category.id}/management" do %>
-      <li>
-        <div class="d-flex">
-          <%= image_tag("#{category.icon}", alt: "#{category.name} icon") %>
-          <p><%= category.name %></p>
-          <p>$<%= total %></p>
+    <%= link_to("/categories/#{category.id}/management", class: 'hola') do %>
+      <li class="card-category-wrapper">
+        <div class="d-flex f-justify-between">
+          <div class="icon">
+            <%= image_tag("#{category.icon}", alt: "#{category.name} icon") %>
+          </div>
+          <p class="cat-name"><%= category.name %></p>
+          <p class="cat-amount">$<%= total %></p>
         </div>
       </li>
       <% end %>
