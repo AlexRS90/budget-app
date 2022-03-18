@@ -30,7 +30,7 @@
 
 ## Live Demo
 
-- [Live demo]()
+- [Live demo](https://money-budget-app.herokuapp.com/)
 
 ## To get a local copy up and running follow these simple example steps.
 
