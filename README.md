@@ -69,7 +69,7 @@ To run the unit test once you did the above steps just write the following comma
 
 ## Acknowledgement
 
-Original design by Gregoire Vella on Behance [Behance](https://www.behance.net/gregoirevella)
+Original design by Gregoire Vella on Behance Profile: [Behance](https://www.behance.net/gregoirevella)
 
 ## 🤝 Contributing
 
