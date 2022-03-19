@@ -1,0 +1,11 @@
+<% flash.each do |type, message| %>
+  <% if type == 'notice' %>
+    <h3 class="success-message"><%= message %></h3>
+  <% elsif type == 'alert' %>
+    <ul class="error-list">
+    <% message.each do |error| %>
+      <li><p class="error-message"><%= error %></p></li>
+    <% end %>
+    </ul>
+  <% end %>
+<% end %>

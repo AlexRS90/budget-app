@@ -1,0 +1,17 @@
+<%= render 'partials/navbar' %>
+<p class="alert"><%= alert %></p>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field d-flex flex-column">
+    <%= f.text_field :name, placeholder: 'Full name', class: 'text-field' %>
+
+    <%= f.email_field :email, placeholder: 'Email', autocomplete: "email", class: 'text-field' %>
+
+    <%= f.password_field :password, placeholder: 'Password 6 characters min', class: 'text-field' %>
+
+    <%= f.password_field :password_confirmation, placeholder: 'Confirm Password', class: 'text-field' %>
+
+    <%= f.submit "Sign up", class: 'btn btn-primary sing-up-in' %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<nav class="d-flex f-justify-between navbar">
+  <div class="d-flex">
+    <% if request.fullpath == '/categories/new' || request.fullpath == "/categories/#{params[:cat_id]}/management" %>
+      <%= link_to '<', '/categories', class: 'back-btn' %>
+    <% elsif request.fullpath == "/categories/#{params[:cat_id]}/management/new" %>
+      <%= link_to '<', "/categories/#{params[:cat_id]}/management", class: 'back-btn' %>
+    <% elsif request.fullpath == '/users/sign_in' || request.fullpath == '/users/sign_up' %>
+      <%= link_to '<', '/', class: 'back-btn' %>
+    <% elsif request.fullpath == '/users' %>
+      <%= link_to '<', '/', class: 'back-btn' %>
+    <% end %>
+  </div>
+  <div>
+    <% case request.fullpath %>
+    <% when '/users/sign_in' %>
+      <h2 class="title">Log in</h2>
+    <% when '/users/sign_up' %>
+      <h2 class="title">Sign up</h2>
+    <% when '/categories' %>
+      <p class="title-singed-in">Categories</p>
+    <% when '/categories/new' %>
+      <p class="title-singed-in">New Category</p>
+    <% when "/categories/#{params[:cat_id]}/management" %>
+      <p class="title-singed-in">Spent Money</p>
+    <% when "/categories/#{params[:cat_id]}/management/new" %>
+      <p class="title-singed-in">New Purchase</p>
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="d-flex">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link log-out' %>
+    </div>
+  <% end %>
+</nav>

@@ -1,0 +1,10 @@
+<%= render 'partials/navbar' %>
+<%= render 'partials/flash' %>
+<% if @empty_categories %>
+  <h2>Add a new category</h2>
+<% else %>
+  <%= render 'partials/category_cards', categories: @categories %>
+<% end %>
+<div class="bg-btn-green d-flex">
+  <%= link_to 'Add Category', '/categories/new', class:'btn-green' %>
+</div>  

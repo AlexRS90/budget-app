@@ -1,0 +1,11 @@
+<%= render 'partials/navbar' %>
+<p class="alert"><%= alert %></p>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field d-flex flex-column">
+    <%= f.email_field :email, placeholder: 'Email', autocomplete: "email", class: 'text-field' %>
+
+    <%= f.password_field :password, placeholder: 'Password', autocomplete: "current-password", class: 'text-field' %>
+
+    <%= f.submit "Log in", class: 'btn btn-primary sing-up-in' %>
+  </div>
+<% end %>
